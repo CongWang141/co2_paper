@@ -1,0 +1,344 @@
+library(tidyverse)
+library(ggplot2)
+# set theme for plotting
+theme_set(theme_classic(base_size = 8))
+
+df <- read.csv("data/data.csv")
+
+# Choose time period
+df <- df[df$year_month > "2001-12" & df$year_month < "2022-01", ]
+
+#############################################
+## 1. plot the number of companies each year#
+#############################################
+
+number <- df %>%
+  group_by(year) %>%
+  summarise(nunique_cusip = n_distinct(PERMNO), obs = n())
+
+number_p <- ggplot(number, aes(x = year)) +
+  geom_bar(aes(y = nunique_cusip, fill = "Number of companies"), stat = "identity", width = 0.6) +
+  geom_line(aes(y = obs/10, color = "Number of observations")) +
+  labs(y = "Number of companies", x = "Year") +
+  scale_y_continuous(sec.axis = sec_axis(~.*10, name = "Number of observations", breaks = seq(0, 50000, 5000)), breaks = seq(0, 5000, 500)) +
+  scale_x_continuous(breaks = seq(2002, 2021, 2)) +
+  scale_fill_manual(values = "steelblue", guide = guide_legend(title = NULL)) +
+  scale_color_manual(values = "darkorange", guide = guide_legend(title = NULL)) +
+  theme(legend.position = c(0.2, 0.8),
+        panel.grid.major = element_line(color = "gray", linetype = "dashed", linewidth = 0.2),
+        panel.grid.minor = element_line(color = "lightgray", linetype = "dotted", linewidth = 0.1))
+
+print(number_p)
+ggsave(filename = "graph/number_p.png", plot = number_p, 
+       width = 5.5, height = 3.1, dpi = 500, bg = "white")
+
+############################################
+# 2. Plot total carbon emission & intensity#
+############################################
+co2_total <- df %>%
+  group_by(year) %>%
+  summarise(Co2_total = mean(Co2_tot, na.rm = TRUE),
+            Co2_intensity = mean(Intensity_tot, na.rm = TRUE))
+scaleFactor <- max(co2_total$Co2_intensity) / max(co2_total$Co2_total)
+
+co2_total_p <- ggplot(data = co2_total, aes(x = year)) +
+  geom_line(aes(y = Co2_total*scaleFactor, col = "Total CO2 Emission")) +
+  geom_line(aes(y = Co2_intensity, col = "CO2 Intensity")) +
+  labs(color = NULL) + # remove legend title
+  scale_x_continuous(name = "Year", breaks = seq(2001, 2021, 2)) +
+  scale_y_continuous(name = "CO2 intensity", breaks = seq(200, 1000, 100),
+                     sec.axis = sec_axis(~./scaleFactor/1000, name = "Total CO2 emission", breaks = seq(2000, 13000, 1000))) +
+  theme(legend.position = c(0.8, 0.8),
+        panel.grid.major = element_line(color = "gray", linetype = "dashed", linewidth = 0.2),
+        panel.grid.minor = element_line(color = 'lightgray', linetype = "dotted", linewidth = 0.1))
+
+
+print(co2_total_p)
+ggsave(filename = "graph/co2_total_p.png",
+       plot = co2_total_p,
+       width = 5.5, height = 3.1,
+       dpi = 500, bg = "white")
+
+############################################
+# 3. Construct greenness with co2_total    #
+############################################
+
+df <- df %>%
+  arrange(year_month) %>%
+  group_by(year_month) %>%
+  mutate(greenness_1 = as.integer(cut(Co2_tot, breaks = quantile(Co2_tot, probs = 0:3/3), labels = FALSE))) %>%
+  ungroup()
+
+# Compute weights
+df <- df %>%
+  group_by(year_month, greenness_1) %>%
+  mutate(mc_sum = sum(Marketcap, na.rm = TRUE)) %>%
+  ungroup() %>%
+  mutate(weights = Marketcap / mc_sum)
+
+# Value weighted returns
+df <- df %>%
+  mutate(vw_return_1 = RET * weights)
+
+# Compute value weighted return for portfolios with different greenness
+vw_return_1 <- df %>%
+  group_by(year_month, greenness_1) %>%
+  summarise(vw_return_1 = sum(vw_return_1, na.rm = TRUE)) %>%
+  ungroup()
+
+# Pivot to wide data
+vw_return_1_wide <- vw_return_1 %>%
+  pivot_wider(names_from = greenness_1, values_from = vw_return_1)
+
+# Calculate cumulative sum of returns
+cumsum_return_1 <- vw_return_1_wide %>%
+  mutate(across(-year_month, cumsum))
+
+colnames(cumsum_return_1) <- c("year_month", "Green", "neutral_1", "Brown", "missing_data")
+cumsum_return_1$year_month <- as.Date(paste0(cumsum_return_1$year_month, "-01"))
+
+# Create the plot
+green_brown_plot_1 <- ggplot(cumsum_return_1, aes(x = year_month)) +
+  geom_line(aes(y = Green, col = "Green")) +
+  geom_line(aes(y = Brown, col = "Brown")) +
+  scale_x_date(date_breaks = "2 years", date_labels = "%Y", name = "Year_month") +
+  scale_y_continuous(breaks = seq(0, 6, by = 0.5), name = "Cumulative Return") +
+  theme(legend.position = c(0.2, 0.8),
+        legend.title = element_blank(),
+        panel.grid.major = element_line(color = "gray", linetype = "dashed", linewidth = 0.2),
+        panel.grid.minor = element_line(color = "lightgray", linetype = "dotted", linewidth = 0.1))
+
+print(green_brown_plot_1)
+# save graphics
+ggsave(filename = "graph/green_brown_plot_1.png",
+       plot = green_brown_plot_1,
+       width = 5.5, height = 3.1,
+       dpi = 500, bg = "white")
+
+############################################
+# 4. Construct greenness with Intensity    #
+############################################
+
+df <- df %>%
+  arrange(year_month) %>%
+  group_by(year_month) %>%
+  mutate(greenness_2 = as.integer(cut(Intensity_tot, breaks = quantile(Intensity_tot, probs = 0:3/3), labels = FALSE))) %>%
+  ungroup()
+
+# Compute weights
+df <- df %>%
+  group_by(year_month, greenness_2) %>%
+  mutate(mc_sum = sum(Marketcap, na.rm = TRUE)) %>%
+  ungroup() %>%
+  mutate(weights = Marketcap / mc_sum)
+
+# Value weighted returns
+df <- df %>%
+  mutate(vw_return_2 = RET * weights)
+
+# Compute value weighted return for portfolios with different greenness
+vw_return_2 <- df %>%
+  group_by(year_month, greenness_2) %>%
+  summarise(vw_return_2 = sum(vw_return_2, na.rm = TRUE)) %>%
+  ungroup()
+
+# Pivot to wide data
+vw_return_2_wide <- vw_return_2 %>%
+  pivot_wider(names_from = greenness_2, values_from = vw_return_2)
+
+# Calculate cumulative sum of returns
+cumsum_return_2 <- vw_return_2_wide %>%
+  mutate(across(-year_month, cumsum))
+
+colnames(cumsum_return_2) <- c("year_month", "Green", "neutral_2", "Brown", "missing_data")
+cumsum_return_2$year_month <- as.Date(paste0(cumsum_return_2$year_month, "-01"))
+
+# Create the plot
+green_brown_plot_2 <- ggplot(cumsum_return_2, aes(x = year_month)) +
+  geom_line(aes(y = Green, col = "Green")) +
+  geom_line(aes(y = Brown, col = "Brown")) +
+  scale_x_date(date_breaks = "2 years", date_labels = "%Y", name = "Year_month") +
+  scale_y_continuous(breaks = seq(0, 6, by = 0.5), name = "Cumulative Return") +
+  theme(legend.position = c(0.2, 0.8),
+        legend.title = element_blank(),
+        panel.grid.major = element_line(color = "gray", linetype = "dashed", linewidth = 0.2),
+        panel.grid.minor = element_line(color = "lightgray", linetype = "dotted", linewidth = 0.1))
+
+print(green_brown_plot_2)
+# save graphics
+ggsave(filename = "graph/green_brown_plot_2.png",
+       plot = green_brown_plot_2,
+       width = 5.5, height = 3.1,
+       dpi = 500, bg = "white")
+
+
+#########################################################
+# 5. Average Returns in Different Emission Percentiles  #
+#########################################################
+
+# Convert the RET column to percentages (multiply by 100)
+df <- df %>% mutate(RET = RET * 100)
+
+# Convert Co2_tot column to percentiles and create co2_tot dataframe
+co2_tot <- df %>%
+  mutate(
+    percentiles = as.integer(cut(Co2_tot, breaks = quantile(Co2_tot, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))
+  ) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert Co2_scope1 column to percentiles and create co2_scope1 dataframe
+co2_scope1 <- df %>%
+  mutate(
+    percentiles = as.integer(cut(Co2_scope1, breaks = quantile(Co2_scope1, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))
+  ) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert Co2_scope2 column to percentiles and create co2_scope2 dataframe
+co2_scope2 <- df %>%
+  mutate(
+    percentiles = as.integer(cut(Co2_scope2, breaks = quantile(Co2_scope2, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))
+  ) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert Co2_scope3 column to percentiles and create co2_scope3 dataframe
+co2_scope3 <- df %>%
+  mutate(
+    percentiles = as.integer(cut(Co2_scope3, breaks = quantile(Co2_scope3, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))
+  ) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# plot
+# Create a data frame that combines all four co2 data frames
+combined_data <- bind_rows(
+  co2_tot %>% mutate(Category = "Panel A: Total CO2 Emissions"),
+  co2_scope1 %>% mutate(Category = "Panel B: Scope1 CO2 Emissions"),
+  co2_scope2 %>% mutate(Category = "Panel C: Scope2 CO2 Emissions"),
+  co2_scope3 %>% mutate(Category = "Panel D: Scope3 CO2 Emissions")
+)
+
+# Create a ggplot
+co2_percentile <- ggplot(combined_data, aes(x = percentiles, y = RET_mean, color = Category)) +
+  geom_line() +
+  facet_wrap(~ Category, nrow = 2, scales = "free") +
+  labs(x = "Percentiles Based On CO2 Emissions", y = "Average Stock Returns") +
+  scale_y_continuous(limits = c(0, 3), breaks = seq(0, 3, by = 0.5)) + 
+  theme(legend.position = "none",
+        panel.grid.major = element_line(color = "gray", linetype = "dashed", linewidth = 0.2),
+        panel.grid.minor = element_line(color = "lightgray", linetype = "dotted", linewidth = 0.1)) 
+
+print(co2_percentile)
+# save graphics
+ggsave(filename = "graph/co2_percentile.png",
+       plot = co2_percentile,
+       width = 5.5, height = 3.1,
+       dpi = 500, bg = "white")
+#########################################################
+# 6. Average Returns in Different Intensity Percentiles  #
+#########################################################
+
+# Convert Intensity_tot column to percentiles and create intensity_tot dataframe
+Intensity_tot <- df %>%
+  mutate(percentiles = as.integer(cut(Intensity_tot, breaks = quantile(Intensity_tot, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert Intensity_scope1 column to percentiles and create Intensity_scope1 dataframe
+Intensity_scope1 <- df %>%
+  mutate(percentiles = as.integer(cut(Intensity_scope1, breaks = quantile(Intensity_scope1, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert Intensity_scope2 column to percentiles and create Intensity_scope2 dataframe
+Intensity_scope2 <- df %>%
+  mutate(percentiles = as.integer(cut(Intensity_scope2, breaks = quantile(Intensity_scope2, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert Intensity_scope3 column to percentiles and create Intensity_scope3 dataframe
+Intensity_scope3 <- df %>%
+  mutate(percentiles = as.integer(cut(Intensity_scope3, breaks = quantile(Intensity_scope3, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# plot
+# Create a data frame that combines all four co2 data frames
+combined_data_in <- bind_rows(
+  Intensity_tot %>% mutate(Category = "Panel A: Total CO2 Intensity"),
+  Intensity_scope1 %>% mutate(Category = "Panel B: Scope1 CO2 Intensity"),
+  Intensity_scope2 %>% mutate(Category = "Panel C: Scope2 CO2 Intensity"),
+  Intensity_scope3 %>% mutate(Category = "Panel D: Scope3 CO2 Intensity")
+)
+
+# Create a ggplot
+intensity_percentile <- ggplot(combined_data_in, aes(x = percentiles, y = RET_mean, color = Category)) +
+  geom_line() +
+  facet_wrap(~ Category, nrow = 2, scales = "free") +
+  labs(x = "Percentiles Based On CO2 Intensity", y = "Average Stock Returns") +
+  scale_y_continuous(limits = c(-1, 4), breaks = seq(-1, 4, by = 0.5)) + 
+  theme(legend.position = "none",
+        panel.grid.major = element_line(color = "gray", linetype = "dashed", linewidth = 0.2),
+        panel.grid.minor = element_line(color = "lightgray", linetype = "dotted", linewidth = 0.1))
+
+# save graphics
+ggsave(filename = "graph/intensity_percentile.png",
+       plot = intensity_percentile,
+       width = 5.5, height = 3.1,
+       dpi = 500, bg = "white")
+
+#########################################################
+# 7. Average Returns in Different Percentiles of others #
+#########################################################
+
+# Convert Marketcap column to percentiles and create Marketcap dataframe
+Marketcap <- df %>%
+  mutate(percentiles = as.integer(cut(Marketcap, breaks = quantile(Marketcap, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert Leverage column to percentiles and create Leverage dataframe
+Levarage <- df %>%
+  mutate(percentiles = as.integer(cut(Levarage, breaks = quantile(Levarage, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert RoE column to percentiles and create RoE dataframe
+RoE <- df %>%
+  mutate(percentiles = as.integer(cut(RoE, breaks = quantile(RoE, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# Convert SaleGR column to percentiles and create SaleGR dataframe
+SaleGR <- df %>%
+  mutate(percentiles = as.integer(cut(SaleGR, breaks = quantile(SaleGR, probs = seq(0, 1, by = 0.01), na.rm = TRUE), labels = FALSE))) %>%
+  group_by(percentiles) %>%
+  summarize(RET_mean = mean(RET, na.rm = TRUE))
+
+# plot
+# Create a data frame that combines all four co2 data frames
+combined_data_others <- bind_rows(
+  Marketcap %>% mutate(Category = "Panel A: Firm Size"),
+  Levarage %>% mutate(Category = "Panel B: Leverage"),
+  RoE %>% mutate(Category = "Panel C: RoE"),
+  SaleGR %>% mutate(Category = "Panel D: Sales Growth")
+)
+
+# Create a ggplot
+others_percentile <- ggplot(combined_data_others, aes(x = percentiles, y = RET_mean, color = Category)) +
+  geom_line() +
+  facet_wrap(~ Category, nrow = 2, scales = "free") +
+  labs(x = "Percentiles Based On Other Characteristics", y = "Average Stock Returns") +
+  scale_y_continuous(limits = c(-1, 4), breaks = seq(-1, 4, by = 0.5)) + 
+  theme(legend.position = "none",
+        panel.grid.major = element_line(color = "gray", linetype = "dashed", linewidth = 0.2),
+        panel.grid.minor = element_line(color = "lightgray", linetype = "dotted", linewidth = 0.1))
+
+print(others_percentile)
+# save graphics
+ggsave(filename = "graph/others_percentile.png",
+       plot = others_percentile,
+       width = 5.5, height = 3.1,
+       dpi = 500, bg = "white")
