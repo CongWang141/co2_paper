@@ -1,0 +1,201 @@
+\begin{thebibliography}{38}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Agreement(2015)]{agreement2015paris}
+Paris Agreement.
+\newblock Paris agreement.
+\newblock In \emph{report of the conference of the parties to the United Nations framework convention on climate change (21st session, 2015: Paris). Retrived December}, volume~4, page 2017. HeinOnline, 2015.
+
+\bibitem[Alliance(2017)]{alliance2017global}
+Global Sustainable~Investment Alliance.
+\newblock Global sustainable investment review 2016.
+\newblock 2017.
+
+\bibitem[Andersson et~al.(2016)Andersson, Bolton, and Samama]{andersson2016hedging}
+Mats Andersson, Patrick Bolton, and Fr{\'e}d{\'e}ric Samama.
+\newblock Hedging climate risk.
+\newblock \emph{Financial Analysts Journal}, 72\penalty0 (3):\penalty0 13--32, 2016.
+
+\bibitem[Angrist and Pischke(2009)]{angrist2009mostly}
+Joshua~D Angrist and J{\"o}rn-Steffen Pischke.
+\newblock \emph{Mostly harmless econometrics: An empiricist's companion}.
+\newblock Princeton University Press, 2009.
+
+\bibitem[Ardia et~al.(2022)Ardia, Bluteau, Boudt, and Inghelbrecht]{ardia2022climate}
+David Ardia, Keven Bluteau, Kris Boudt, and Koen Inghelbrecht.
+\newblock Climate change concerns and the performance of green vs. brown stocks.
+\newblock \emph{Management Science}, 2022.
+
+\bibitem[Aswani et~al.(2023)Aswani, Raghunandan, and Rajgopal]{aswani2023carbon}
+Jitendra Aswani, Aneesh Raghunandan, and Shivaram Rajgopal.
+\newblock Are carbon emissions associated with stock returns?
+\newblock \emph{Review of Finance, forthcoming}, 2023.
+
+\bibitem[Avramov et~al.(2022)Avramov, Cheng, Lioui, and Tarelli]{avramov2022sustainable}
+Doron Avramov, Si~Cheng, Abraham Lioui, and Andrea Tarelli.
+\newblock Sustainable investing with esg rating uncertainty.
+\newblock \emph{Journal of Financial Economics}, 145\penalty0 (2):\penalty0 642--664, 2022.
+
+\bibitem[Baker and Wurgler(2007)]{baker2007investor}
+Malcolm Baker and Jeffrey Wurgler.
+\newblock Investor sentiment in the stock market.
+\newblock \emph{Journal of Economic Perspectives}, 21\penalty0 (2):\penalty0 129--151, 2007.
+
+\bibitem[Baker et~al.(2018)Baker, Bergstresser, Serafeim, and Wurgler]{baker2018financing}
+Malcolm Baker, Daniel Bergstresser, George Serafeim, and Jeffrey Wurgler.
+\newblock Financing the response to climate change: The pricing and ownership of us green bonds.
+\newblock Technical report, National Bureau of Economic Research, 2018.
+
+\bibitem[Bolton and Kacperczyk(2021{\natexlab{a}})]{bolton2021global}
+Patrick Bolton and Marcin Kacperczyk.
+\newblock Global pricing of carbon-transition risk.
+\newblock Technical report, National Bureau of Economic Research, 2021{\natexlab{a}}.
+
+\bibitem[Bolton and Kacperczyk(2021{\natexlab{b}})]{bolton2021investors}
+Patrick Bolton and Marcin Kacperczyk.
+\newblock Do investors care about carbon risk?
+\newblock \emph{Journal of Financial Economics}, 142\penalty0 (2):\penalty0 517--549, 2021{\natexlab{b}}.
+
+\bibitem[Bolton and Kacperczyk(2023)]{bolton2023carbon}
+Patrick Bolton and Marcin Kacperczyk.
+\newblock Are carbon emissions associated with stock returns? comment.
+\newblock \emph{Review of Finance}, page rfad019, 2023.
+
+\bibitem[Chava(2014)]{chava2014environmental}
+Sudheer Chava.
+\newblock Environmental externalities and cost of capital.
+\newblock \emph{Management Science}, 60\penalty0 (9):\penalty0 2223--2247, 2014.
+
+\bibitem[Dimitrov(2016)]{dimitrov2016paris}
+Radoslav~S Dimitrov.
+\newblock The paris agreement on climate change: Behind closed doors.
+\newblock \emph{Global Environmental Politics}, 16\penalty0 (3):\penalty0 1--11, 2016.
+\newblock \doi{10.1162/GLEP_a_00361}.
+
+\bibitem[Engberg-Pedersen(2021)]{engberg2021influence}
+Lars Engberg-Pedersen.
+\newblock Is the influence of neoliberalism on development norms waning? evidence from the addis ababa action agenda and the 2030 agenda for sustainable development.
+\newblock \emph{Development Policy Review}, 39\penalty0 (4):\penalty0 682--700, 2021.
+\newblock \doi{10.1111/dpr.12521}.
+
+\bibitem[Engle et~al.(2020)Engle, Giglio, Kelly, Lee, and Stroebel]{engle2020hedging}
+Robert~F Engle, Stefano Giglio, Bryan Kelly, Heebum Lee, and Johannes Stroebel.
+\newblock Hedging climate change news.
+\newblock \emph{The Review of Financial Studies}, 33\penalty0 (3):\penalty0 1184--1216, 2020.
+
+\bibitem[Faccini et~al.(2021)Faccini, Matin, and Skiadopoulos]{faccini2021climate}
+Renato Faccini, Rastin Matin, and George Skiadopoulos.
+\newblock Are climate change risks priced in the us stock market?
+\newblock Technical report, Danmarks Nationalbank Working Papers, 2021.
+
+\bibitem[Faccini et~al.(2023)Faccini, Matin, and Skiadopoulos]{faccini2023dissecting}
+Renato Faccini, Rastin Matin, and George Skiadopoulos.
+\newblock Dissecting climate risks: Are they reflected in stock prices?
+\newblock \emph{Journal of Banking \& Finance}, 155:\penalty0 106948, 2023.
+
+\bibitem[Fama and French(1993)]{fama1993common}
+Eugene~F Fama and Kenneth~R French.
+\newblock Common risk factors in the returns on stocks and bonds.
+\newblock \emph{Journal of Financial Economics}, 33\penalty0 (1):\penalty0 3--56, 1993.
+
+\bibitem[Fama and French(2015)]{fama2015five}
+Eugene~F Fama and Kenneth~R French.
+\newblock A five-factor asset pricing model.
+\newblock \emph{Journal of Financial Economics}, 116\penalty0 (1):\penalty0 1--22, 2015.
+
+\bibitem[Friede et~al.(2015)Friede, Busch, and Bassen]{friede2015esg}
+Gunnar Friede, Timo Busch, and Alexander Bassen.
+\newblock Esg and financial performance: aggregated evidence from more than 2000 empirical studies.
+\newblock \emph{Journal of Sustainable Finance \& Investment}, 5\penalty0 (4):\penalty0 210--233, 2015.
+
+\bibitem[FUND(2015)]{fund2015sustainable}
+SDG FUND.
+\newblock Sustainable development goals.
+\newblock \emph{Available at this link: https://www. un. org/sustainabledevelopment/inequality}, 2015.
+
+\bibitem[Gabaix and Koijen(2021)]{gabaix2021search}
+Xavier Gabaix and Ralph~SJ Koijen.
+\newblock In search of the origins of financial fluctuations: The inelastic markets hypothesis.
+\newblock Technical report, National Bureau of Economic Research, 2021.
+
+\bibitem[Garvey et~al.(2018)Garvey, Iyer, and Nash]{garvey2018carbon}
+Gerald~T Garvey, Mohanaraman Iyer, and Joanna Nash.
+\newblock Carbon footprint and productivity: does the “e” in esg capture efficiency as well as environment.
+\newblock \emph{Journal of Investment Management}, 16\penalty0 (1):\penalty0 59--69, 2018.
+
+\bibitem[G{\"o}rgen et~al.(2020)G{\"o}rgen, Jacob, Nerlinger, Riordan, Rohleder, and Wilkens]{gorgen2020carbon}
+Maximilian G{\"o}rgen, Andrea Jacob, Martin Nerlinger, Ryan Riordan, Martin Rohleder, and Marco Wilkens.
+\newblock Carbon risk.
+\newblock \emph{Available at SSRN 2930897}, 2020.
+
+\bibitem[Hsu et~al.(2023)Hsu, Li, and Tsou]{hsu2023pollution}
+Po-hsuan Hsu, Kai Li, and Chi-yang Tsou.
+\newblock The pollution premium.
+\newblock \emph{The Journal of Finance}, 78\penalty0 (3):\penalty0 1343--1392, 2023.
+
+\bibitem[In et~al.(2017)In, Park, and Monk]{in2017being}
+Soh~Young In, Ki~Young Park, and Ashby Monk.
+\newblock Is “being green” rewarded in the market? an empirical investigation of decarbonization risk and stock returns.
+\newblock \emph{International Association for Energy Economics (Singapore Issue)}, 46\penalty0 (48), 2017.
+
+\bibitem[Kapfhammer et~al.(2020)Kapfhammer, Larsen, and Thorsrud]{kapfhammer2020climate}
+Felix Kapfhammer, Vegard~H Larsen, and Leif~Anders Thorsrud.
+\newblock Climate risk and commodity currencies.
+\newblock 2020.
+
+\bibitem[Kelman(2015)]{kelman2015climate}
+Ilan Kelman.
+\newblock Climate change and the sendai framework for disaster risk reduction.
+\newblock \emph{International Journal of Disaster Risk Science}, 6:\penalty0 117--127, 2015.
+\newblock \doi{10.1007/s13753-015-0046-5}.
+
+\bibitem[Koijen and Yogo(2019)]{koijen2019demand}
+Ralph~SJ Koijen and Motohiro Yogo.
+\newblock A demand system approach to asset pricing.
+\newblock \emph{Journal of Political Economy}, 127\penalty0 (4):\penalty0 1475--1515, 2019.
+
+\bibitem[Krueger et~al.(2020)Krueger, Sautner, and Starks]{krueger2020importance}
+Philipp Krueger, Zacharias Sautner, and Laura~T Starks.
+\newblock The importance of climate risks for institutional investors.
+\newblock \emph{The Review of Financial Studies}, 33\penalty0 (3):\penalty0 1067--1111, 2020.
+
+\bibitem[Oestreich and Tsiakas(2015)]{oestreich2015carbon}
+A~Marcel Oestreich and Ilias Tsiakas.
+\newblock Carbon emissions and stock returns: Evidence from the eu emissions trading scheme.
+\newblock \emph{Journal of Banking \& Finance}, 58:\penalty0 294--308, 2015.
+
+\bibitem[P{\'a}stor et~al.(2021)P{\'a}stor, Stambaugh, and Taylor]{pastor2021sustainable}
+L'ubo{\v{s}} P{\'a}stor, Robert~F Stambaugh, and Lucian~A Taylor.
+\newblock Sustainable investing in equilibrium.
+\newblock \emph{Journal of Financial Economics}, 142\penalty0 (2):\penalty0 550--571, 2021.
+
+\bibitem[P{\'a}stor et~al.(2022)P{\'a}stor, Stambaugh, and Taylor]{pastor2022dissecting}
+L'ubo{\v{s}} P{\'a}stor, Robert~F Stambaugh, and Lucian~A Taylor.
+\newblock Dissecting green returns.
+\newblock \emph{Journal of Financial Economics}, 146\penalty0 (2):\penalty0 403--424, 2022.
+
+\bibitem[Pedersen et~al.(2021)Pedersen, Fitzgibbons, and Pomorski]{pedersen2021responsible}
+Lasse~Heje Pedersen, Shaun Fitzgibbons, and Lukasz Pomorski.
+\newblock Responsible investing: The esg-efficient frontier.
+\newblock \emph{Journal of Financial Economics}, 142\penalty0 (2):\penalty0 572--597, 2021.
+
+\bibitem[Petersen(2008)]{petersen2008estimating}
+Mitchell~A Petersen.
+\newblock Estimating standard errors in finance panel data sets: Comparing approaches.
+\newblock \emph{The Review of Financial Studies}, 22\penalty0 (1):\penalty0 435--480, 2008.
+
+\bibitem[White(1980)]{white1980heteroskedasticity}
+Halbert White.
+\newblock A heteroskedasticity-consistent covariance matrix estimator and a direct test for heteroskedasticity.
+\newblock \emph{Econometrica}, pages 817--838, 1980.
+
+\bibitem[Zerbib(2022)]{zerbib2022sustainable}
+Olivier~David Zerbib.
+\newblock A sustainable capital asset pricing model (s-capm): Evidence from environmental integration and sin stock exclusion.
+\newblock \emph{Review of Finance}, 26\penalty0 (6):\penalty0 1345--1388, 2022.
+
+\end{thebibliography}

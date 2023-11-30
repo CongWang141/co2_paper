@@ -342,3 +342,61 @@ ggsave(filename = "graph/others_percentile.png",
        plot = others_percentile,
        width = 5.5, height = 3.1,
        dpi = 500, bg = "white")
+
+#########################################################
+# 8. plot the MCCC index with distinct social events    #
+#########################################################
+
+index <- read.csv("data/raw_data/index.csv")
+# choose time period
+index <- index[index$year_month > "2001-12" & index$year_month < "2022-01", ]
+
+index$year_month <- as.Date(paste0(index$year_month, "-01"))
+
+mccc_plot <- ggplot(index, aes(x = year_month, y = mccc)) +
+  geom_line(color='steelblue') + 
+  labs(x = "", y = "Media Climate Change Concerns / Monthly") +
+  scale_y_continuous(limits = c(0, 6), breaks = seq(0, 6, by = 0.5)) + 
+  scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
+  theme(legend.position = "none",
+        panel.grid.major = element_line(color = "gray", linetype = "dashed", linewidth = 0.2),
+        panel.grid.minor = element_line(color = "lightgray", linetype = "dotted", linewidth = 0.1))
+
+# add text
+mccc_plot <- mccc_plot + geom_rect(aes(xmin = as.Date("2007-04-01"), xmax = as.Date("2007-04-01") + 1300, ymin = 4.9, ymax = 5.4),
+                   fill = "white", color = "black") +
+  geom_text(aes(x = as.Date("2007-06-01"), y = 5,
+                label = "UN Security Council Talk\non Climate Change"),
+            size = 1.5, hjust = 0, vjust = 0, check_overlap = TRUE) +
+  geom_vline(xintercept = as.Date("2007-04-01"), linetype = "dashed", color = "red", alpha=0.2) +
+  geom_rect(aes(xmin = as.Date("2009-12-01"), xmax = as.Date("2009-12-01") + 1100, ymin = 4, ymax = 4.5),
+            fill = "white", color = "black") +
+  geom_text(aes(x = as.Date("2010-02-01"), y = 4.1,
+                label = "Copenhagen Climate \nChange Conference"),
+            size = 1.5, hjust = 0, vjust = 0, check_overlap = TRUE) +
+  geom_vline(xintercept = as.Date("2009-12-01"), linetype = "dashed", color = "red", alpha=0.3) + 
+  geom_rect(aes(xmin = as.Date("2015-12-01"), xmax = as.Date("2015-12-01") + 1100, ymin = 4, ymax = 4.3),
+            fill = "white", color = "black") +
+  geom_text(aes(x = as.Date("2016-02-01"), y = 4.1,
+                label = "The Paris Agreement"),
+            size = 1.5, hjust = 0, vjust = 0, check_overlap = TRUE) +
+  geom_vline(xintercept = as.Date("2015-12-01"), linetype = "dashed", color = "red", alpha=0.3) +
+  geom_rect(aes(xmin = as.Date("2021-12-01") - 1100, xmax = as.Date("2021-10-01"), ymin = 5, ymax = 5.5),
+            fill = "white", color = "black") +
+  geom_text(aes(x = as.Date("2021-10-01") - 1000, y = 5.1,
+                label = "COP26 Climate \nChange Conference"),
+            size = 1.5, hjust = 0, vjust = 0, check_overlap = TRUE) +
+  geom_vline(xintercept = as.Date("2021-10-01"), linetype = "dashed", color = "red", alpha=0.3) +
+  geom_rect(aes(xmin = as.Date("2017-06-01"), xmax = as.Date("2017-06-01") + 1300, ymin = 3.2, ymax = 3.7),
+            fill = "white", color = "black") +
+  geom_text(aes(x = as.Date("2017-06-01") + 100, y = 3.3,
+                label = "COP23 the implementation \nof the Paris Agreement"),
+            size = 1.5, hjust = 0, vjust = 0, check_overlap = TRUE) +
+  geom_vline(xintercept = as.Date("2017-06-01"), linetype = "dashed", color = "red", alpha=0.3)
+  
+
+# save graphics
+ggsave(filename = "graph/mccc_plot.png",
+       plot = mccc_plot,
+       width = 5.5, height = 3.1,
+       dpi = 500, bg = "white")
