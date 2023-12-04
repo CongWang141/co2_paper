@@ -3,47 +3,48 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plainnat.bst
 Database file #1: citation.bib
-Warning--empty journal in alliance2017global
+Warning--I didn't find a database entry for "BNPParibas2023"
+Warning--I didn't find a database entry for "ilhan2021carbon"
 Warning--empty journal in kapfhammer2020climate
-You've used 38 entries,
+You've used 36 entries,
             2773 wiz_defined-function locations,
-            802 strings with 10772 characters,
-and the built_in function-call counts, 17033 in all, are:
-= -- 1559
-> -- 922
-< -- 24
-+ -- 315
-- -- 276
-* -- 1384
-:= -- 2633
-add.period$ -- 118
-call.type$ -- 38
-change.case$ -- 209
-chr.to.int$ -- 37
-cite$ -- 78
-duplicate$ -- 787
-empty$ -- 1399
-format.name$ -- 334
-if$ -- 3542
+            796 strings with 10473 characters,
+and the built_in function-call counts, 16283 in all, are:
+= -- 1489
+> -- 902
+< -- 20
++ -- 307
+- -- 270
+* -- 1346
+:= -- 2525
+add.period$ -- 111
+call.type$ -- 36
+change.case$ -- 201
+chr.to.int$ -- 35
+cite$ -- 73
+duplicate$ -- 736
+empty$ -- 1324
+format.name$ -- 326
+if$ -- 3372
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 35
-newline$ -- 201
-num.names$ -- 152
-pop$ -- 370
+missing$ -- 33
+newline$ -- 191
+num.names$ -- 144
+pop$ -- 347
 preamble$ -- 1
-purify$ -- 168
+purify$ -- 162
 quote$ -- 0
-skip$ -- 601
+skip$ -- 564
 stack$ -- 0
-substring$ -- 695
-swap$ -- 69
-text.length$ -- 4
+substring$ -- 683
+swap$ -- 57
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 413
-warning$ -- 2
-while$ -- 164
+type$ -- 391
+warning$ -- 1
+while$ -- 157
 width$ -- 0
-write$ -- 500
-(There were 2 warnings)
+write$ -- 474
+(There were 3 warnings)
