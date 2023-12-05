@@ -1,15 +1,15 @@
-co2_paper/data/data.csv
-co2_paper/data/raw_data/
-co2_paper/latex/graphics/
-co2_paper/latex/main.aux
-co2_paper/latex/main.bbl
-co2_paper/latex/main.blg
-co2_paper/latex/main.fdb_latexmk
-co2_paper/latex/main.fls
-co2_paper/latex/main.log
-co2_paper/latex/main.out
-co2_paper/latex/main.synctex.gz
+.co2_paper/data/data.csv
+.co2_paper/data/raw_data/
+.co2_paper/latex/graphics/
+.co2_paper/latex/main.aux
+.co2_paper/latex/main.bbl
+.co2_paper/latex/main.blg
+.co2_paper/latex/main.fdb_latexmk
+.co2_paper/latex/main.fls
+.co2_paper/latex/main.log
+.co2_paper/latex/main.out
+.co2_paper/latex/main.synctex.gz
 co2_emission_venv/
 co2_venv/
-co2_paper/latex/
+.co2_paper/latex/
 
