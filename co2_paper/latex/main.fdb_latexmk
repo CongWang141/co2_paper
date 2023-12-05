@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1701774084 "main.aux" "main.bbl" "main" 1701774088 0
+["bibtex main"] 1701774084 "main.aux" "main.bbl" "main" 1701800286 0
   "./citation.bib" 1701724359 12462 f282de42fbaa8946efb83926b3cc4b64 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "main.aux" 1701774088 14102 c2dde323a3986d6ee6a1e9c243f01642 "pdflatex"
+  "main.aux" 1701800286 14102 c2dde323a3986d6ee6a1e9c243f01642 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1701774084 "/Users/wang/Desktop/5. co2_project/co2_paper/latex/main.tex" "main.pdf" "main" 1701774088 0
-  "/Users/wang/Desktop/5. co2_project/co2_paper/latex/main.tex" 1701774079 99324 1e78beacb7acf129ae94d05ff8f3a93a ""
+["pdflatex"] 1701800282 "/Users/wang/Desktop/5. co2_project/co2_paper/latex/main.tex" "main.pdf" "main" 1701800286 0
+  "/Users/wang/Desktop/5. co2_project/co2_paper/latex/main.tex" 1701800188 99324 1e78beacb7acf129ae94d05ff8f3a93a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm" 1136768653 1536 73da8e8f1d2a4c957d51ca133585586b ""
@@ -144,19 +144,19 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1699772884 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1699772319 7883464 dd9918c586204d9eafcc6635ec27dccc ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "graphics/co2_percentile.png" 1701691142 278180 8b2babedfb2e77db31e0f7a4ccdca5c7 ""
-  "graphics/co2_trend.png" 1701691076 195201 ae9d51bd133d406545f381470cac3963 ""
+  "graphics/co2_percentile.png" 1701800271 278180 8b2babedfb2e77db31e0f7a4ccdca5c7 ""
+  "graphics/co2_trend.png" 1701800270 195201 ae9d51bd133d406545f381470cac3963 ""
   "graphics/forestplot.png" 1701692103 374249 fc2a99553afd7529e7e19fd28e887fda ""
-  "graphics/green_brown_co2.png" 1701691214 141441 bf3efd7f7cdd0854e49e8a7ddcbbbb4b ""
-  "graphics/green_brown_int.png" 1701691230 143809 9e6b778fd22487bcc01b70683baa6306 ""
-  "graphics/int_percentile.png" 1701691157 343831 3560a94644d1f2e05cb7faf53b9bc83e ""
+  "graphics/green_brown_co2.png" 1701800282 148663 46b50794797c62425d623ee002259368 ""
+  "graphics/green_brown_int.png" 1701800050 149416 aa1082e097d2a91ab829a1dde542a278 ""
+  "graphics/int_percentile.png" 1701800272 343831 3560a94644d1f2e05cb7faf53b9bc83e ""
   "graphics/mccc.png" 1701692631 233871 da8cce1e0b7d83da202c8bc3aa7dd203 ""
-  "graphics/number_obs.png" 1701691035 146083 80e48282b6ab8c490524dfdc1994f8c3 ""
-  "graphics/other_percentile.png" 1701691173 266712 39434b308032367f134d8d560137c2be ""
-  "main.aux" 1701774088 14102 c2dde323a3986d6ee6a1e9c243f01642 "pdflatex"
+  "graphics/number_obs.png" 1701800270 146083 80e48282b6ab8c490524dfdc1994f8c3 ""
+  "graphics/other_percentile.png" 1701800272 266712 39434b308032367f134d8d560137c2be ""
+  "main.aux" 1701800286 14102 c2dde323a3986d6ee6a1e9c243f01642 "pdflatex"
   "main.bbl" 1701774084 10597 7201e6f2c016a3ff5e06b7c21accc0ab "bibtex main"
-  "main.out" 1701774088 3666 444f615d853ca83d150e674d025e34ce "pdflatex"
-  "main.tex" 1701774079 99324 1e78beacb7acf129ae94d05ff8f3a93a ""
+  "main.out" 1701800286 3666 444f615d853ca83d150e674d025e34ce "pdflatex"
+  "main.tex" 1701800188 99324 1e78beacb7acf129ae94d05ff8f3a93a ""
   "preamble.sty" 1700748660 3410 a3886efa213c3236515ffe954829b335 ""
   (generated)
   "main.aux"
