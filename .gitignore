@@ -9,5 +9,5 @@
 .latex/main.log
 .latex/main.out
 .latex/main.synctex.gz
-.co2_emission_venv/
-.co2_venv/
+co2_emission_venv/
+co2_venv/
