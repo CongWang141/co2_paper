@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1701774084 "main.aux" "main.bbl" "main" 1701800838 0
+["bibtex main"] 1701774084 "main.aux" "main.bbl" "main" 1701801483 0
   "./citation.bib" 1701724359 12462 f282de42fbaa8946efb83926b3cc4b64 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "main.aux" 1701800838 14102 c2dde323a3986d6ee6a1e9c243f01642 "pdflatex"
+  "main.aux" 1701801482 14102 c2dde323a3986d6ee6a1e9c243f01642 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1701800834 "/Users/wang/Desktop/5. co2_project/co2_paper/latex/main.tex" "main.pdf" "main" 1701800838 0
-  "/Users/wang/Desktop/5. co2_project/co2_paper/latex/main.tex" 1701800834 99324 1e78beacb7acf129ae94d05ff8f3a93a ""
+["pdflatex"] 1701801478 "/Users/wang/Desktop/5. co2_project/co2_paper/latex/main.tex" "main.pdf" "main" 1701801483 0
+  "/Users/wang/Desktop/5. co2_project/co2_paper/latex/main.tex" 1701801478 99321 ef83beed0a765067023dcc7a3a7708a0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/tcrm0700.tfm" 1136768653 1536 73da8e8f1d2a4c957d51ca133585586b ""
@@ -153,10 +153,10 @@
   "graphics/mccc.png" 1701692631 233871 da8cce1e0b7d83da202c8bc3aa7dd203 ""
   "graphics/number_obs.png" 1701800270 146083 80e48282b6ab8c490524dfdc1994f8c3 ""
   "graphics/other_percentile.png" 1701800272 266712 39434b308032367f134d8d560137c2be ""
-  "main.aux" 1701800838 14102 c2dde323a3986d6ee6a1e9c243f01642 "pdflatex"
+  "main.aux" 1701801482 14102 c2dde323a3986d6ee6a1e9c243f01642 "pdflatex"
   "main.bbl" 1701774084 10597 7201e6f2c016a3ff5e06b7c21accc0ab "bibtex main"
-  "main.out" 1701800838 3666 444f615d853ca83d150e674d025e34ce "pdflatex"
-  "main.tex" 1701800834 99324 1e78beacb7acf129ae94d05ff8f3a93a ""
+  "main.out" 1701801482 3666 444f615d853ca83d150e674d025e34ce "pdflatex"
+  "main.tex" 1701801478 99321 ef83beed0a765067023dcc7a3a7708a0 ""
   "preamble.sty" 1700748660 3410 a3886efa213c3236515ffe954829b335 ""
   (generated)
   "main.aux"
