@@ -1,4 +1,12 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+.data/data.csv
+.data/raw_data
+.latex/graphics
+.latex/main.aux
+.latex/main.bbl
+.latex/main.blg
+.latex/main.fdb_latexmk
+.latex/main.fls
+.latex/main.log
+.latex/main.out
+.latex/main.synctex.gz
+.co2_emission_venv
