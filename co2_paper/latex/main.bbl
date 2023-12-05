@@ -1,4 +1,4 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{39}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -49,11 +49,6 @@ Patrick Bolton and Marcin Kacperczyk.
 Patrick Bolton and Marcin Kacperczyk.
 \newblock Do investors care about carbon risk?
 \newblock \emph{Journal of Financial Economics}, 142\penalty0 (2):\penalty0 517--549, 2021{\natexlab{b}}.
-
-\bibitem[Bolton and Kacperczyk(2023)]{bolton2023carbon}
-Patrick Bolton and Marcin Kacperczyk.
-\newblock Are carbon emissions associated with stock returns? comment.
-\newblock \emph{Review of Finance}, page rfad019, 2023.
 
 \bibitem[Chava(2014)]{chava2014environmental}
 Sudheer Chava.
@@ -117,6 +112,11 @@ Gerald~T Garvey, Mohanaraman Iyer, and Joanna Nash.
 \newblock Carbon footprint and productivity: does the “e” in esg capture efficiency as well as environment.
 \newblock \emph{Journal of Investment Management}, 16\penalty0 (1):\penalty0 59--69, 2018.
 
+\bibitem[George and Hwang(2010)]{george2010resolution}
+Thomas~J George and Chuan-Yang Hwang.
+\newblock A resolution of the distress risk and leverage puzzles in the cross section of stock returns.
+\newblock \emph{Journal of financial economics}, 96\penalty0 (1):\penalty0 56--79, 2010.
+
 \bibitem[G{\"o}rgen et~al.(2020)G{\"o}rgen, Jacob, Nerlinger, Riordan, Rohleder, and Wilkens]{gorgen2020carbon}
 Maximilian G{\"o}rgen, Andrea Jacob, Martin Nerlinger, Ryan Riordan, Martin Rohleder, and Marco Wilkens.
 \newblock Carbon risk.
@@ -126,6 +126,11 @@ Maximilian G{\"o}rgen, Andrea Jacob, Martin Nerlinger, Ryan Riordan, Martin Rohl
 Po-hsuan Hsu, Kai Li, and Chi-yang Tsou.
 \newblock The pollution premium.
 \newblock \emph{The Journal of Finance}, 78\penalty0 (3):\penalty0 1343--1392, 2023.
+
+\bibitem[Ilhan et~al.(2021)Ilhan, Sautner, and Vilkov]{ilhan2021carbon}
+Emirhan Ilhan, Zacharias Sautner, and Grigory Vilkov.
+\newblock Carbon tail risk.
+\newblock \emph{The Review of Financial Studies}, 34\penalty0 (3):\penalty0 1540--1571, 2021.
 
 \bibitem[In et~al.(2017)In, Park, and Monk]{in2017being}
 Soh~Young In, Ki~Young Park, and Ashby Monk.
@@ -153,10 +158,15 @@ Philipp Krueger, Zacharias Sautner, and Laura~T Starks.
 \newblock The importance of climate risks for institutional investors.
 \newblock \emph{The Review of Financial Studies}, 33\penalty0 (3):\penalty0 1067--1111, 2020.
 
-\bibitem[Oestreich and Tsiakas(2015)]{oestreich2015carbon}
-A~Marcel Oestreich and Ilias Tsiakas.
-\newblock Carbon emissions and stock returns: Evidence from the eu emissions trading scheme.
-\newblock \emph{Journal of Banking \& Finance}, 58:\penalty0 294--308, 2015.
+\bibitem[Lamont(2000)]{lamont2000investment}
+Owen~A Lamont.
+\newblock Investment plans and stock returns.
+\newblock \emph{The Journal of Finance}, 55\penalty0 (6):\penalty0 2719--2745, 2000.
+
+\bibitem[Paribas(2023)]{BNPParibas2023}
+BNP Paribas.
+\newblock The esg global survey 2023 (4th edition).
+\newblock Technical report, BNP Paribas Securities Services, 2023.
 
 \bibitem[P{\'a}stor et~al.(2021)P{\'a}stor, Stambaugh, and Taylor]{pastor2021sustainable}
 L'ubo{\v{s}} P{\'a}stor, Robert~F Stambaugh, and Lucian~A Taylor.
@@ -172,6 +182,11 @@ L'ubo{\v{s}} P{\'a}stor, Robert~F Stambaugh, and Lucian~A Taylor.
 Lasse~Heje Pedersen, Shaun Fitzgibbons, and Lukasz Pomorski.
 \newblock Responsible investing: The esg-efficient frontier.
 \newblock \emph{Journal of Financial Economics}, 142\penalty0 (2):\penalty0 572--597, 2021.
+
+\bibitem[Perez-Quiros and Timmermann(2000)]{perez2000firm}
+Gabriel Perez-Quiros and Allan Timmermann.
+\newblock Firm size and cyclical variations in stock returns.
+\newblock \emph{The Journal of Finance}, 55\penalty0 (3):\penalty0 1229--1262, 2000.
 
 \bibitem[Petersen(2008)]{petersen2008estimating}
 Mitchell~A Petersen.
