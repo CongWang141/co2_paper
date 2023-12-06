@@ -13,8 +13,8 @@ co2_paper/latex/main.synctex.gz
 co2_emission_venv/
 co2_venv/
 
-co2_paper/.DS_Store
-co2_paper/latex/.DS_Store
-co2_paper/data/.DS_Store
-.DS_Store
-.vscode
+co2_paper/DS_Store
+co2_paper/latex/DS_Store
+co2_paper/data/DS_Store
+DS_Store
+vscode
