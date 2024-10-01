@@ -1,0 +1,100 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+\begin{document}
+
+\doublespacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Motivation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Background}
+The classic capital asset pricing model (CAPM) outline a direct relationship between the expected return on an asset and its risk (\cite{sharpe1964capital}). This principle is foundational in finance and is used to price assets and evaluate investment opportunities. As shown in the following equation, the expected return on an asset is equal to the risk-free rate plus the asset's beta times the market risk premium. Risk-taken investors are in favor of assets associated with high risks, anticipating higher returns to compensate for the increased risk exposure. The beta is a measure of the asset's sensitivity to the market and decided by the asset's fundamental characteristics. These characteristics can be discerned through various financial indicators such as assets and liability from the balance sheet, net income and revenue from the income statement, and operating cash flow and investing cash flow from the cash flow statement. 
+
+The beta is not only associated with financial characteristics but also with the firm's other fundamentals, most importantly the firm's enviromental, social and governance practice, the so called ESG. Among theose, the enviromental practice is becoming increasingly important as the world is facing the climate change crisis. 
+
+\subsection{Contradictory findings}
+While the existing studies have shown that the firm's enviromental practice is associated with the firm's financial performance as well as stock return. However, these findings are not consistent, usually contradicting with each other. For example, \cite{bolton2021investors}, \cite{aswani2023carbon} among others find that the firm's carbon emission is positively correlated with the firm's stock return, that is brown assets, which is more exposed to climate change risk, are anticipated with higher return, alin with the CAPM model, that higher risk exposures is compensated with higher returns. On the other hand, \cite{pastor2022dissecting} and \cite{ardia2022climate} among others find that the ``Green'' assets have higher returns than their ``Brown'' counterparts, which generate an anomaly and contradict the classic theory in asset pricing.
+
+\section{Research question}
+With this paper, we try to investigate the contradictory findings in the literature and examine the relationship between the firm's carbon emission and stock return.
+
+\section{Methodology}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+We through aggregate portfolio analysis and individual stock analysis to examine the relationship between the firm's carbon emission and stock return. We first construct the ``Green'' and ``Brown'' portfolios conditional on the firm's carbon emission and industry, and compare their performance over the sample period. We then conduct individual stock analysis to examine the relationship between the firm's carbon emission and stock return, controlling for other factors that may affect the stock return.
+
+\section{Why carbon emission?}
+So why carbon emission? To quantify firm's risk exposure towards climate change risk, there are several ways. One common method is to use the ESG scores (Especially the E score) provided by the third-party vendors, such as MSCI, Sustainalytics, and Refinitiv. A higher ``E'' score indicates superior enviromental practice, and identifies the firm as ``Green'', while a lower score indicates inferior enviromental practice, and identifies the firm as ``Brown'', as used by \cite{pastor2022dissecting}.
+
+However, relying on the ESG scores to gauge the firm's enviromental commitment can be fraught with challenges. The different methodologies among the rating agencies lead to discrepancies in the ESG scores for the same entity. \cite{avramov2022sustainable} has shown that such inconsistencies in the ESG ratings can lead to increased CAPM alpha, higher effective beta, and investment withdrawals from the stocks marked by significant ESG uncertainty. Moreover, there are concerns regarding the ``greenwashing'', where the larger corporations may leverage their extensive resources to curate their public image and ESG disclosures, potentially leading to the overstated scores.
+
+Another method to evaluate an asset's risk exposure towards climate change risk is to directly measure specific enviromental metrics, such as carbon emissions, water usage, and waste production. Among these, carbon emissions are a critical indicator of a firm's enviromental practices. Firms with higher total carbon emissions are considered more vulnerable to climate change risks and are therefore classified as ``Brown'', while those with lower emissions are catogorized as ``Green'' (\cite{bolton2021investors}, \cite{aswani2023carbon}). Furthermore, carbon intensity, a measure of total carbon emissions relative to the firm's revenue, is also utilized to assess a firm's greeness. It has more meaningful implications for the firm's enviromental practices, as it captures the firm's carbon emissions relative to its operational scale.
+
+\section{Data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Scope and source}
+This study exclusively examines all the publically treated stocks in the United States. Firms' financial data are obtained from the Compustat database, which provides comprehensive financial information on publicly traded companies. Stocks' monthly returns are sourced from the CRSP database, which offers historical stock prices and returns. The environmental data, including carbon emissions and carbon intensity, are collected from the Truscost database. 
+
+Here we plot the historical number of firms and observations covered by the database. As we can see before 2015 the number of companies included in the database is around 1000, and after 2015 there is huge increase in the number of companies. Based on the Trucost database disclosures, they have increased the coverage of the small and medium-sized companies in 2016 and there after. 
+
+\subsection{Variable Definition}
+
+In the following table we provide a detailed definition and normalization of the variables used in the analysis. We use the montly stock return data as our primary dependent variable. The independent variable of interest is the firm's carbon emission and carbon intensity. We also control for other factors that may affect the stock return, such as the firm's size, book-to-market ratio, and others. We normalize some variables by natrual logarithm to make the data have comparable scale.
+
+\subsection{Summary statistics and correlation}
+We provide the summary statistics of the variables of interest, and winsorize the data to remove the outliers. Winsorize the data is important because the outliers can have a significant impact on the results. However, it is also susceptible of data manipulation. So we only winsorize the data at the 1\% and 99\% level, to remove the extreme values and keep the data as close to the original as possible. The criteria for winsorizing the data is based on the reasonable range of the data and not an exposive standard deviation.
+
+We also calculate the pairwised correlation between each pair of variables to examine the relationship between them. We observe a high correlation of firm's total carbon emission and other variables such as size, PPE, and number of stuff. While the correlation between firm's carbon intensity and other variables is relatively low.
+
+In the regression analysis, we might concern the collinearity problem. But I will explain why it doesn't matter in the firm-level analysis.
+
+\subsection{CO2 emission and intensity}
+We plot the time series of the firm's total carbon emission and carbon intensity to observe the trend over time. We observe that the total carbon emission and carbon intensity have been decreasing over time, indicating that the firms are becoming more enviromentally friendly. This trend is consistent with the global effort to reduce carbon emissions and combat climate change.
+
+\subsection{Industry heterogeneity}
+We also examine the industry heterogeneity in the firm's carbon emission. We calculate the average carbon emission for each industry and observe that the carbon emission varies significantly across industries. The energy and utilities sectors have the highest carbon emission, while the technology and healthcare sectors have the lowest carbon emission. This industry heterogeneity is important to consider when comparing the firm's carbon emission across different industries.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Empirical results}
+\subsection{Average monthly stock return on firms' carbon footprint}
+
+Our fist practice delves into the unconditional relationshihp between firm's carbon emission and stock return. Over the whole sample period, we calculate the average monthly stock return for the firms in different percentiles based on their carbon emission and compute the average monthly stock return in each percentile.
+
+\begin{itemize}
+    \item We observe that the firms with higher carbon emission have lower average stock return.
+    \item Carbon intensity is not indicative of the stock return.
+    \item Firm's other variables have various unconditional relationships with stock return.
+\end{itemize}
+
+\subsection{Portfolio analysis}
+We construct the ``Green'' and ``Brown'' portfolios based on the firm's carbon emission and industry, based on the methodology we have discussed earlier. Specificly, in each industry we sort the firms based on their carbon emission in into 5 quintiles, and build the ``Green'' portfolio with the firms in the lowest quintile and the ``Brown'' portfolio with the firms in the highest quintile, the firms in the middle quintiles are denonted as neutral. We exclude the firms in the second and second-to-last quintiles for a more clear comparison. 
+
+When we build the portfolios based on firms total carbon emission, the ``Green'' portfolio achieves higher cumulative return than the ``Brown'' portfolio over the whole sample period. This result is consistent with the findings of \cite{pastor2022dissecting} where they use E score to classify the stocks as ``Green'' and ``Brown''. When we build the portfolios based on firm's carbon intensity, the ``Green'' portfolio also outperforms the ``Brown'' portfolio, but the difference is less significant. The outperformance of the ``Green'' portfolio only observed after 2010.
+
+Considering total carbon emission, we construct the ``Green-Brown'' portfolio, which is the long-short portfolio of the ``Green'' and ``Brown'' portfolios, yeilds a positive monthly return of 1.45\%, statistically significant at the 1\% level. The green minus brown premium based on carbon intensity is only 0.39\%, with a standard error of 23.4 bp, statistically significant at the 5\% level. This performance is less pronounced than that observed with carbon emissions.
+
+We regress the ``Green-Brown'' portfolios on various factors to examine the risk-adjusted performance. For the ``Green-Brown'' portfolio based on total carbon emission there are always positive alphas that can not be explained. When formulate the portolio based on carbon intensity the alpha is positive but not statistically significant.
+
+\subsection{Individual stock analysis}
+Our portfolio analysis suggests that the ``Green'' portfolio outperforms the ``Brown'', which is consistent with the findings of \cite{pastor2022dissecting}. Using simple carbon emission data to classify the stocks as ``Green'' and ``Brown'' is indicative of the stock return as with the E score. However, this finding is not consistent with the classic asset pricing model, also contradicting the findings of \cite{bolton2021investors} and \cite{aswani2023carbon}. 
+
+In this section we delve into the individual stock analysis to examine the relationship between the firm's carbon emission and stock return. Table 6 shows the results of firm-level analysis across two different fixed effects specifications for both the restricted and unrestricted models. In the unrestricted model, we use only firm's total carbon emission as the regressor, while in the restricted model we include both firm's total carbon emission and a set of control variables. In align with \cite{bolton2021investors}, when we use time + industry fixed effects, we get a positive coefficient for firm's total carbon emission, which is statistically significant at the 1\% level. After controlling for other factors, the coefficient remains positive but is no longer statistically significant. This result is consistent with the findings of \cite{aswani2023carbon}.
+
+When we use time + firm fixed effects, we get a negative coefficient for firm's total carbon emission, which is statistically significant at the 1\% level. After controlling for other factors, the coefficient remains negative and statistically significant. This result is consistent with the findings of \cite{pastor2022dissecting} and the ``Green'' portfolio outperformance observed in the portfolio analysis.
+
+The issue of colinearty is a concern in the firm-level analysis. The collinearity issue will reduce the interpretability of the results. When interpreting the results, we assume ceteris paribus which means that the other variables are held constant. However, if the other variables are highly correlated with firm's carbon emission this assumption is violated. However, from a pure statistical perspective, the collinearity issue mostly affects the precision of the estimates i.e. the standard errors. The sign of the coefficient is often not affected.
+
+The main focus here should be on the sign of the coefficient when we use different fixed effects specifications. The time fixed effects are used to control for the time trend, that includes the macroeconomic factors, investor sentiment, and other time-varying factors. The industry fixed effects are used to control for the industry-specific factors, such as the industry's regulatory environment, competition, and other industry-specific factors and assume all the firms in the same industries are affected by the same industry-specific factors. By including Entity-fixed effects, we are accounting for firm-specific factors that may be constant over time but vary across different firms. This is a more stringent restriction by the assumption that investors not only distinguish industry-specific characteristics but also place a heightened emphasis on each firm's specific inherent attributes.
+
+We also conduct robustness checks to examine the sensitivity of the results to different model specifications and cluster the standard errors at different level. Whenever we control firm fixed effects the coefficient of firm's total carbon emission is negative and statistically significant. This result is consistent with the findings of \cite{pastor2022dissecting} and the ``Green'' portfolio outperformance observed in the portfolio analysis.
+
+\subsection{Explain the contradictory findings}
+Build upon the equilibrium model by \cite{pastor2021sustainable} and \cite{pedersen2021responsible}, along with the demand system asset pricing model by \cite{koijen2019demand}. We aim to present empirical evidence suporting the nothion that a shift in financial market preferences due to climate change has led to the observed contradiction between empirical findings and classic asset pricing theory.
+
+The shift in financial market preferences due to unanticipated climate change risks can be measured using the Unexpected Media Climate Change Concern Index (UMC), developed by \cite{ardia2022climate}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\bibliographystyle{plainnat}
+\bibliography{citation}
+
+\end{document}

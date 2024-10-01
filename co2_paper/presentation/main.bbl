@@ -1,0 +1,53 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ardia et~al.(2022)Ardia, Bluteau, Boudt, and Inghelbrecht]{ardia2022climate}
+David Ardia, Keven Bluteau, Kris Boudt, and Koen Inghelbrecht.
+\newblock Climate change concerns and the performance of green vs. brown stocks.
+\newblock \emph{Management Science}, 2022.
+
+\bibitem[Aswani et~al.(2023)Aswani, Raghunandan, and Rajgopal]{aswani2023carbon}
+Jitendra Aswani, Aneesh Raghunandan, and Shivaram Rajgopal.
+\newblock Are carbon emissions associated with stock returns?
+\newblock \emph{Review of Finance, forthcoming}, 2023.
+
+\bibitem[Avramov et~al.(2022)Avramov, Cheng, Lioui, and Tarelli]{avramov2022sustainable}
+Doron Avramov, Si~Cheng, Abraham Lioui, and Andrea Tarelli.
+\newblock Sustainable investing with esg rating uncertainty.
+\newblock \emph{Journal of Financial Economics}, 145\penalty0 (2):\penalty0 642--664, 2022.
+
+\bibitem[Bolton and Kacperczyk(2021)]{bolton2021investors}
+Patrick Bolton and Marcin Kacperczyk.
+\newblock Do investors care about carbon risk?
+\newblock \emph{Journal of Financial Economics}, 142\penalty0 (2):\penalty0 517--549, 2021.
+
+\bibitem[Koijen and Yogo(2019)]{koijen2019demand}
+Ralph~SJ Koijen and Motohiro Yogo.
+\newblock A demand system approach to asset pricing.
+\newblock \emph{Journal of Political Economy}, 127\penalty0 (4):\penalty0 1475--1515, 2019.
+
+\bibitem[P{\'a}stor et~al.(2021)P{\'a}stor, Stambaugh, and Taylor]{pastor2021sustainable}
+L'ubo{\v{s}} P{\'a}stor, Robert~F Stambaugh, and Lucian~A Taylor.
+\newblock Sustainable investing in equilibrium.
+\newblock \emph{Journal of Financial Economics}, 142\penalty0 (2):\penalty0 550--571, 2021.
+
+\bibitem[P{\'a}stor et~al.(2022)P{\'a}stor, Stambaugh, and Taylor]{pastor2022dissecting}
+L'ubo{\v{s}} P{\'a}stor, Robert~F Stambaugh, and Lucian~A Taylor.
+\newblock Dissecting green returns.
+\newblock \emph{Journal of Financial Economics}, 146\penalty0 (2):\penalty0 403--424, 2022.
+
+\bibitem[Pedersen et~al.(2021)Pedersen, Fitzgibbons, and Pomorski]{pedersen2021responsible}
+Lasse~Heje Pedersen, Shaun Fitzgibbons, and Lukasz Pomorski.
+\newblock Responsible investing: The esg-efficient frontier.
+\newblock \emph{Journal of Financial Economics}, 142\penalty0 (2):\penalty0 572--597, 2021.
+
+\bibitem[Sharpe(1964)]{sharpe1964capital}
+William~F Sharpe.
+\newblock Capital asset prices: A theory of market equilibrium under conditions of risk.
+\newblock \emph{The journal of finance}, 19\penalty0 (3):\penalty0 425--442, 1964.
+
+\end{thebibliography}
